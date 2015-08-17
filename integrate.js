@@ -75,17 +75,87 @@ WebApp.update = function()
         album: null,
         artLocation: null
     }
-
+    
+    try
+    {
+        track.title = document.querySelector(".player-controls .track .track__title").innerText;
+        track.artist = document.querySelector(".player-controls .track .track__artists").innerText;
+        track.artLocation = document.querySelector(".player-controls .track .album-cover").src.replace(
+            /\d+x\d+$/, "200x200");
+    }
+    catch (e)
+    {
+        //~ console.log(e);
+    }
+    
     player.setTrack(track);
-    player.setPlaybackState(PlaybackState.UNKNOWN);
-
+    
+    var buttons = this.getButtons();
+    if (buttons.pause)
+        var state = PlaybackState.PLAYING;
+    else if (buttons.play)
+        var state = PlaybackState.PAUSED;
+    else
+        var state = PlaybackState.UNKNOWN;
+    player.setPlaybackState(state);
+    
+    player.setCanGoPrev(!!buttons.prev);
+    player.setCanGoNext(!!buttons.next);
+    player.setCanPlay(!!buttons.play);
+    player.setCanPause(!!buttons.pause);
+    
     // Schedule the next update
     setTimeout(this.update.bind(this), 500);
+}
+
+
+WebApp.getButtons = function()
+{
+    var notDisabled = function(selector)
+    {
+        var elm = document.querySelector(selector);
+        return (elm && !elm.classList.contains("player-controls__btn_disabled")) ? elm : null;
+    }
+    
+    var playPause = notDisabled(".player-controls__btn_play");
+    return {
+        prev: notDisabled(".player-controls__btn_prev"),
+        play: playPause && playPause.classList.contains("player-controls__btn_pause") ? null : playPause,
+        pause: playPause && playPause.classList.contains("player-controls__btn_pause") ? playPause : null,
+        next: notDisabled(".player-controls__btn_next")
+    }
 }
 
 // Handler of playback actions
 WebApp._onActionActivated = function(emitter, name, param)
 {
+    var buttons = this.getButtons();
+    switch (name)
+    {
+    case PlayerAction.TOGGLE_PLAY:
+        if (buttons.play)
+            Nuvola.clickOnElement(buttons.play);
+        else if (buttons.pause)
+            Nuvola.clickOnElement(buttons.pause);
+        break;
+    case PlayerAction.PLAY:
+        if (buttons.play)
+            Nuvola.clickOnElement(buttons.play);
+        break;
+    case PlayerAction.PAUSE:
+    case PlayerAction.STOP:
+        if (buttons.pause)
+            Nuvola.clickOnElement(buttons.pause);
+        break;
+    case PlayerAction.PREV_SONG:
+        if (buttons.prev)
+            Nuvola.clickOnElement(buttons.prev);
+        break;
+    case PlayerAction.NEXT_SONG:
+        if (buttons.next)
+            Nuvola.clickOnElement(buttons.next);
+        break;
+    }
 }
 
 WebApp.start();
