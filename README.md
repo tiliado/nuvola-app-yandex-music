@@ -1,15 +1,13 @@
 Yandex Music Nuvola Player App
 ==============================
 
-THis is a template! Not functional!
-
 Integration of Yandex Music into your linux desktop via
 [Nuvola Player](https://github.com/tiliado/nuvolaplayer).
  
 Support
 -------
 
-Report bugs and issues at <https://github.com/tiliado/nuvola-app-XXX/issues>.
+Report bugs and issues at <https://github.com/tiliado/nuvola-app-yandex-music/issues>.
 
 
 Installation
