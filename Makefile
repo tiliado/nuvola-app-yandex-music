@@ -48,7 +48,7 @@ icon.png : src/icon.svg
 clean:
 	rm -f icon.png
 
-install: LICENSE metadata.json integrate.js icon.png
+install: LICENSE-BSD.txt LICENSE-CC-BY.txt metadata.json integrate.js icon.png
 	install -vCd $(DEST)/$(APP_ID)
 	install -vC $^ $(DEST)/$(APP_ID)
 
