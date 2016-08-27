@@ -9,6 +9,12 @@ Support
 
 Report bugs and issues at <https://github.com/tiliado/nuvola-app-yandex-music/issues>.
 
+Dependencies
+------------
+
+  * GNU Make
+  * SVG optimizer: [Scour](https://github.com/codedread/scour)
+  * SVG converter: Lasem, librsvg, GraphicsMagick, ImageMagick 
 
 Installation
 ------------
@@ -26,11 +32,16 @@ Copyright
     + Copyright 2014 Jiří Janoušek <janousek.jiri@gmail.com>
     + License: [2-Clause BSD-license](./LICENSE-BSD.txt)
 
-  - `src/icon.svg`
-    + Copyright 2011 Alexander King <alexanderddking@gmail.com >
-    + Copyright 2011 Arturo Torres Sánchez <arturo.ilhuitemoc@gmail.com>
-    + License: [CC-BY-3.0](./LICENSE-CC-BY.txt)
+  - `src/icon*.svg`
+    + Copyright 2015 Alexander King <alexanderddking@gmail.com >
+    + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
+    + License: [2-Clause BSD-license](./LICENSE)
 
+  - Files *.sh 
+    + Copyright 2016 Patrick Burroughs (Celti) <celti@celti.name>
+    + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
+    + License: [2-Clause BSD-license](./LICENSE)
+    
   - Other files:
-    + Copyright 2015 Jiří Janoušek <janousek.jiri@gmail.com>
+    + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
     + License: [2-Clause BSD-license](./LICENSE-BSD.txt)

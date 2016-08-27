@@ -14,8 +14,8 @@
    height="63.844788"
    id="svg3136"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="icon.svg">
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="icon-sm.svg">
   <defs
      id="defs3138">
     <linearGradient
@@ -48,7 +48,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.2817073"
-     inkscape:cx="6.8272255"
+     inkscape:cx="-9.583761"
      inkscape:cy="29.592417"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -58,9 +58,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1025"
+     inkscape:window-height="1014"
      inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3141">
@@ -94,7 +94,7 @@
     </g>
     <g
        id="g3834"
-       transform="matrix(0.81963473,0,0,0.81963473,134.14203,126.75857)">
+       transform="matrix(0.95522142,0,0,0.95522142,102.23005,22.635997)">
       <path
          transform="matrix(1.1594203,0,0,1.1594203,231.98692,751.87995)"
          d="m 33.371294,25.392267 c 0,10.466679 -8.48492,18.951599 -18.951599,18.951599 -10.4666793,0 -18.9515992,-8.48492 -18.9515992,-18.951599 0,-10.466679 8.4849199,-18.9515989 18.9515992,-18.9515989 10.466679,0 18.951599,8.4849199 18.951599,18.9515989 z"

@@ -10,12 +10,12 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="63.935692"
-   height="63.844788"
+   width="28"
+   height="28"
    id="svg3136"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="icon.svg">
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="icon-xs.svg">
   <defs
      id="defs3138">
     <linearGradient
@@ -48,8 +48,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="7.2817073"
-     inkscape:cx="6.8272255"
-     inkscape:cy="29.592417"
+     inkscape:cx="-1.4817107"
+     inkscape:cy="29.759888"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -58,9 +58,9 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:window-width="1920"
-     inkscape:window-height="1025"
+     inkscape:window-height="1014"
      inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata3141">
@@ -78,9 +78,9 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-308.03215,-729.01122)">
+     transform="translate(-308.02784,-765.02348)">
     <g
-       transform="translate(308,728.88816)"
+       transform="matrix(0.43794005,0,0,0.4385636,308.01376,764.96951)"
        style="display:inline"
        id="g3852">
       <rect
@@ -94,24 +94,26 @@
     </g>
     <g
        id="g3834"
-       transform="matrix(0.81963473,0,0,0.81963473,134.14203,126.75857)">
-      <path
-         transform="matrix(1.1594203,0,0,1.1594203,231.98692,751.87995)"
-         d="m 33.371294,25.392267 c 0,10.466679 -8.48492,18.951599 -18.951599,18.951599 -10.4666793,0 -18.9515992,-8.48492 -18.9515992,-18.951599 0,-10.466679 8.4849199,-18.9515989 18.9515992,-18.9515989 10.466679,0 18.951599,8.4849199 18.951599,18.9515989 z"
-         sodipodi:ry="18.951599"
-         sodipodi:rx="18.951599"
-         sodipodi:cy="25.392267"
-         sodipodi:cx="14.419695"
-         id="path3004-57"
-         style="fill:#000000;fill-opacity:1;stroke:none"
-         sodipodi:type="arc" />
-      <path
-         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-         d="m 34.34375,6.84375 0,23.59375 c -1.247976,-0.647848 -2.652998,-1.03125 -4.15625,-1.03125 -5.004331,0 -9.0625,4.058169 -9.0625,9.0625 0,5.004331 4.058169,9.0625 9.0625,9.0625 4.659809,0 8.493597,-3.506645 9,-8.03125 -0.0774,-7.388705 -0.228228,-14.794067 -0.34375,-22.1875 l 8.84375,3.0625 0.125,-9.03125 z"
-         transform="matrix(1.2200557,0,0,1.2200557,212.15563,734.78176)"
-         id="path3004-5"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccsssccccc" />
+       transform="matrix(1.029331,0,0,1.0392422,86.25423,-47.564263)">
+      <g
+         id="g2991">
+        <path
+           sodipodi:type="arc"
+           style="fill:#000000;fill-opacity:1;stroke:none"
+           id="path3004-57"
+           sodipodi:cx="14.419695"
+           sodipodi:cy="25.392267"
+           sodipodi:rx="18.951599"
+           sodipodi:ry="18.951599"
+           d="m 33.371294,25.392267 c 0,10.466679 -8.48492,18.951599 -18.951599,18.951599 -10.4666793,0 -18.9515992,-8.48492 -18.9515992,-18.951599 0,-10.466679 8.4849199,-18.9515989 18.9515992,-18.9515989 10.466679,0 18.951599,8.4849199 18.951599,18.9515989 z"
+           transform="matrix(0.50791273,0,0,0.50378514,220.83796,786.46352)" />
+        <path
+           sodipodi:nodetypes="ccsssccccc"
+           inkscape:connector-curvature="0"
+           id="path3004-5"
+           d="m 229.43732,782.6622 0,12.5078 c -0.66701,-0.34344 -0.34901,-0.5467 -1.15246,-0.5467 -2.67469,0 -4.84369,2.15137 -4.84369,4.80433 0,2.65295 2.169,4.80432 4.84369,4.80432 2.49055,0 4.53962,-1.85899 4.81028,-4.25763 -0.0414,-3.91699 -0.12198,-7.8428 -0.18373,-11.7623 l 4.72677,1.62353 0.0668,-4.78776 z"
+           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.90490896;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      </g>
     </g>
   </g>
 </svg>
