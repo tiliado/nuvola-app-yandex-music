@@ -27,6 +27,16 @@
 (function(Nuvola)
 {
 
+if (Nuvola.global === window)
+{
+    /* Fix for broken detection of window.webkitAudioContext */
+    var origHasOwnProperty = window.hasOwnProperty;
+    window.hasOwnProperty = function(key)
+    {
+        return origHasOwnProperty.call(window, key) && window[key] !== undefined;
+    };
+}
+
 // Create media player component
 var player = Nuvola.$object(Nuvola.MediaPlayer);
 
@@ -42,12 +52,6 @@ WebApp._onInitWebWorker = function(emitter)
 {
     Nuvola.WebApp._onInitWebWorker.call(this, emitter);
     
-    /* Fix for broken detection of window.webkitAudioContext */
-    var origHasOwnProperty = window.hasOwnProperty;
-    window.hasOwnProperty = function(key)
-    {
-        return origHasOwnProperty.call(window, key) && window[key] !== undefined;
-    };
     
     var state = document.readyState;
     if (state === "interactive" || state === "complete")
