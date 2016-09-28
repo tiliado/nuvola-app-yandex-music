@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.3 - September 28, 2016
+------------------------
+
+  * Fixed a compatibility bug with Nuvola Player 3.0.3 or greater. Issue: tiliado/nuvola-app-yandex-music#3
+
 1.2 - August 27, 2016
 -----------------------
 
