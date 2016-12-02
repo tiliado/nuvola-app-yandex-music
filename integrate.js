@@ -2,14 +2,14 @@
  * Copyright 2015 Jiří Janoušek <janousek.jiri@gmail.com>
  *
  * Redistribution and use in source and binary forms, with or without
- * modification, are permitted provided that the following conditions are met: 
- * 
+ * modification, are permitted provided that the following conditions are met:
+ *
  * 1. Redistributions of source code must retain the above copyright notice, this
- *    list of conditions and the following disclaimer. 
+ *    list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
- *    and/or other materials provided with the distribution. 
- * 
+ *    and/or other materials provided with the distribution.
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -51,8 +51,8 @@ var WebApp = Nuvola.$WebApp();
 WebApp._onInitWebWorker = function(emitter)
 {
     Nuvola.WebApp._onInitWebWorker.call(this, emitter);
-    
-    
+
+
     var state = document.readyState;
     if (state === "interactive" || state === "complete")
         this._onPageReady();
@@ -65,6 +65,9 @@ WebApp._onPageReady = function()
 {
     // Connect handler for signal ActionActivated
     Nuvola.actions.connect("ActionActivated", this);
+    document.querySelector(".centerblock-wrapper").setAttribute('style', 'width: 100%');
+    var sidebar = document.querySelector(".sidebar__placeholder .sidebar");
+    sidebar.parentNode.removeChild(sidebar);
 
     // Start update routine
     this.update();
@@ -79,7 +82,7 @@ WebApp.update = function()
         album: null,
         artLocation: null
     }
-    
+
     try
     {
         track.title = document.querySelector(".player-controls .track .track__title").innerText;
@@ -91,9 +94,9 @@ WebApp.update = function()
     {
         //~ console.log(e);
     }
-    
+
     player.setTrack(track);
-    
+
     var buttons = this.getButtons();
     if (buttons.pause)
         var state = PlaybackState.PLAYING;
@@ -102,12 +105,12 @@ WebApp.update = function()
     else
         var state = PlaybackState.UNKNOWN;
     player.setPlaybackState(state);
-    
+
     player.setCanGoPrev(!!buttons.prev);
     player.setCanGoNext(!!buttons.next);
     player.setCanPlay(!!buttons.play);
     player.setCanPause(!!buttons.pause);
-    
+
     // Schedule the next update
     setTimeout(this.update.bind(this), 500);
 }
@@ -120,7 +123,7 @@ WebApp.getButtons = function()
         var elm = document.querySelector(selector);
         return (elm && !elm.classList.contains("player-controls__btn_disabled")) ? elm : null;
     }
-    
+
     var playPause = notDisabled(".player-controls__btn_play");
     return {
         prev: notDisabled(".player-controls__btn_prev"),
