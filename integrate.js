@@ -65,7 +65,7 @@ WebApp._onPageReady = function()
 {
     // Connect handler for signal ActionActivated
     Nuvola.actions.connect("ActionActivated", this);
-    document.querySelector(".centerblock-wrapper").setAttribute('width', null);
+    document.querySelector(".centerblock-wrapper").setAttribute('width', '100%');
     var sidebar = document.querySelector(".sidebar__placeholder .sidebar");
     sidebar.parentNode.removeChild(sidebar);
     // Start update routine
