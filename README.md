@@ -42,6 +42,11 @@ Copyright
     + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
     + License: [2-Clause BSD-license](./LICENSE)
     
+  - integrate.js:
+    + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
+    + Copyright 2016 Basil Belokon <basil.belokon@gmail.com>
+    + License: [2-Clause BSD-license](./LICENSE-BSD.txt)
+
   - Other files:
     + Copyright 2016 Jiří Janoušek <janousek.jiri@gmail.com>
     + License: [2-Clause BSD-license](./LICENSE-BSD.txt)

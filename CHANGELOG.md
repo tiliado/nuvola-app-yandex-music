@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.4 - unreleased
+----------------
+
+  * Advertising sidebar has been removed as it consumes too high amount of CPU resources.
+
 1.3 - September 28, 2016
 ------------------------
 
