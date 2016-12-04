@@ -65,6 +65,12 @@ WebApp._onPageReady = function()
 {
     // Connect handler for signal ActionActivated
     Nuvola.actions.connect("ActionActivated", this);
+    try { 
+        // Remove advertising sidebar
+        document.querySelector(".centerblock-wrapper").setAttribute('style', 'width: 100%');
+        var sidebar = document.querySelector(".sidebar__placeholder .sidebar");
+        sidebar.parentNode.removeChild(sidebar);
+    } catch (e){ /* ignored */ }
 
     // Start update routine
     this.update();
