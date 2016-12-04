@@ -1,0 +1,20 @@
+{
+    "id": "yandex_music", 
+    "name": "Yandex Music", 
+    "maintainer_name": "Jiří Janoušek", 
+    "maintainer_link": "https://github.com/fenryxo", 
+    "version_major": 1, 
+    "version_minor": 3, 
+    "api_major": 3, 
+    "api_minor": 0, 
+    "categories": "AudioVideo;Audio;", 
+    "home_url": "https://music.yandex.ru/", 
+    "license": "2-Clause BSD", 
+    "build": {
+        "icons": [
+            "src/icon.svg SCALABLE 64 128 256", 
+            "src/icon-xs.svg 16 22 24", 
+            "src/icon-sm.svg 32 48"
+        ]
+    }
+}

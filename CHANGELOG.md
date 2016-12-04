@@ -5,6 +5,7 @@ Changelog
 ----------------
 
   * Advertising sidebar has been removed as it consumes too high amount of CPU resources.
+  * Ported to use Nuvola SDK.
 
 1.3 - September 28, 2016
 ------------------------
