@@ -90,7 +90,7 @@ WebApp.update = function()
     {
         track.title = document.querySelector(".player-controls .track .track__title").innerText;
         track.artist = document.querySelector(".player-controls .track .track__artists").innerText;
-        track.artLocation = document.querySelector(".player-controls .track .album-cover").src.replace(
+        track.artLocation = document.querySelector(".player-controls .track .track-cover").src.replace(
             /\d+x\d+$/, "200x200");
     }
     catch (e)
