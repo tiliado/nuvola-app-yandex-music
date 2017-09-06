@@ -1,5 +1,9 @@
 Changelog
 =========
++1
+--
+
+  * Fix cover art image. Patch by Alexander Konarev.
 
 1.4 - February 12th, 2017
 -------------------------
