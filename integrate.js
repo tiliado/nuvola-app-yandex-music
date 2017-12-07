@@ -47,17 +47,24 @@ var PlayerAction = Nuvola.PlayerAction;
 // Create new WebApp prototype
 var WebApp = Nuvola.$WebApp();
 
+// Translations
+var C_ = Nuvola.Translate.pgettext;
+
+var ACTION_LIKE = "like";
+
 // Initialization routines
 WebApp._onInitWebWorker = function(emitter)
 {
     Nuvola.WebApp._onInitWebWorker.call(this, emitter);
-    
-    
+
     var state = document.readyState;
     if (state === "interactive" || state === "complete")
         this._onPageReady();
     else
         document.addEventListener("DOMContentLoaded", this._onPageReady.bind(this));
+
+    Nuvola.actions.addAction("like", "win", ACTION_LIKE, C_("Action", "Like"),
+        null, null, null, null);
 }
 
 // Page is ready for magic
@@ -71,6 +78,8 @@ WebApp._onPageReady = function()
         var sidebar = document.querySelector(".sidebar__placeholder .sidebar");
         sidebar.parentNode.removeChild(sidebar);
     } catch (e){ /* ignored */ }
+
+    player.addExtraActions(ACTION_LIKE);
 
     // Start update routine
     this.update();
@@ -113,7 +122,11 @@ WebApp.update = function()
     player.setCanGoNext(!!buttons.next);
     player.setCanPlay(!!buttons.play);
     player.setCanPause(!!buttons.pause);
-    
+
+    var actionsEnabled = {};
+    actionsEnabled[ACTION_LIKE] = buttons.like != null && document.querySelector(".head__userpic") != null;
+    Nuvola.actions.updateEnabledFlags(actionsEnabled);
+
     // Schedule the next update
     setTimeout(this.update.bind(this), 500);
 }
@@ -126,13 +139,13 @@ WebApp.getButtons = function()
         var elm = document.querySelector(selector);
         return (elm && !elm.classList.contains("player-controls__btn_disabled")) ? elm : null;
     }
-    
     var playPause = notDisabled(".player-controls__btn_play");
     return {
         prev: notDisabled(".player-controls__btn_prev"),
         play: playPause && playPause.classList.contains("player-controls__btn_pause") ? null : playPause,
         pause: playPause && playPause.classList.contains("player-controls__btn_pause") ? playPause : null,
-        next: notDisabled(".player-controls__btn_next")
+        next: notDisabled(".player-controls__btn_next"),
+        like: notDisabled(".player-controls__btn.like_player")
     }
 }
 
@@ -164,6 +177,10 @@ WebApp._onActionActivated = function(emitter, name, param)
     case PlayerAction.NEXT_SONG:
         if (buttons.next)
             Nuvola.clickOnElement(buttons.next);
+        break;
+    case ACTION_LIKE:
+        if (buttons.like)
+          Nuvola.clickOnElement(buttons.like);
         break;
     }
 }
