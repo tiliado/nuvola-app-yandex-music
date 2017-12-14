@@ -64,7 +64,7 @@ WebApp._onInitWebWorker = function(emitter)
         document.addEventListener("DOMContentLoaded", this._onPageReady.bind(this));
 
     Nuvola.actions.addAction("like", "win", ACTION_LIKE, C_("Action", "Like"),
-        null, null, null, null);
+        null, null, null, true);
 }
 
 // Page is ready for magic
@@ -124,8 +124,11 @@ WebApp.update = function()
     player.setCanPause(!!buttons.pause);
 
     var actionsEnabled = {};
+    var actionsStates = {};
     actionsEnabled[ACTION_LIKE] = buttons.like != null && document.querySelector(".head__userpic") != null;
+    actionsStates[ACTION_LIKE] = buttons.like != null && document.querySelector(".icon_like_on") != null;
     Nuvola.actions.updateEnabledFlags(actionsEnabled);
+    Nuvola.actions.updateStates(actionsStates);
 
     // Schedule the next update
     setTimeout(this.update.bind(this), 500);
