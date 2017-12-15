@@ -79,7 +79,7 @@ WebApp._onPageReady = function()
         sidebar.parentNode.removeChild(sidebar);
     } catch (e){ /* ignored */ }
 
-    player.addExtraActions(ACTION_LIKE);
+    player.addExtraActions([ACTION_LIKE]);
 
     // Start update routine
     this.update();
