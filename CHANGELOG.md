@@ -1,7 +1,8 @@
 Changelog
 =========
-+1
---
+
+1.5 - December 16th, 2017
+----------------------
 
   * Fix cover art image. Patch by Alexander Konarev.
   * New maintainer: Aleksey Zhidkov. Issue: tiliado/nuvola-app-yandex-music#10
