@@ -4,6 +4,9 @@ Changelog
 --
 
   * Fix cover art image. Patch by Alexander Konarev.
+  * New maintainer: Aleksey Zhidkov. Issue: tiliado/nuvola-app-yandex-music#10
+  * Nuvola API 4.8 required.
+  * New toggle action - integrated Like button - was added. Issue: tiliado/nuvola-app-yandex-music#2
 
 1.4 - February 12th, 2017
 -------------------------
