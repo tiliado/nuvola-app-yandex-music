@@ -3,3 +3,10 @@ Makefile
 eu.tiliado.NuvolaAppYandexMusic.desktop
 metadata.json
 nuvola-app-yandex-music
+/screenshots/
+eu.tiliado.NuvolaAppYandexMusic.appdata.xml
+eu.tiliado.NuvolaAppYandexMusic.service
+eu.tiliado.WebRuntimeAppYandexMusic.appdata.xml
+eu.tiliado.WebRuntimeAppYandexMusic.desktop
+eu.tiliado.WebRuntimeAppYandexMusic.service
+nuvola-app-yandex-music.metainfo.xml
