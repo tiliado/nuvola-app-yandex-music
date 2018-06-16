@@ -16,5 +16,6 @@
       "src/icon-xs.svg 16 22 24",
       "src/icon-sm.svg 32 48"
     ]
-  }
+  },
+  "requirements": "Chromium[65] Codec[MP3] Feature[MSE]"
 }
