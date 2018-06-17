@@ -1,20 +1,21 @@
 {
-    "id": "yandex_music", 
-    "name": "Yandex Music", 
-    "maintainer_name": "Aleksey Zhidkov", 
-    "maintainer_link": "https://github.com/d-r-q", 
-    "version_major": 1, 
-    "version_minor": 5, 
-    "api_major": 4, 
-    "api_minor": 8, 
-    "categories": "AudioVideo;Audio;", 
-    "home_url": "https://music.yandex.ru/", 
-    "license": "2-Clause BSD", 
-    "build": {
-        "icons": [
-            "src/icon.svg SCALABLE 64 128 256", 
-            "src/icon-xs.svg 16 22 24", 
-            "src/icon-sm.svg 32 48"
-        ]
-    }
+  "id": "yandex_music",
+  "name": "Yandex Music",
+  "maintainer_name": "Aleksey Zhidkov",
+  "maintainer_link": "https://github.com/d-r-q",
+  "version_major": 1,
+  "version_minor": 5,
+  "api_major": 4,
+  "api_minor": 11,
+  "categories": "AudioVideo;Audio;",
+  "home_url": "https://music.yandex.ru/",
+  "license": "2-Clause BSD",
+  "build": {
+    "icons": [
+      "src/icon.svg SCALABLE 64 128 256",
+      "src/icon-xs.svg 16 22 24",
+      "src/icon-sm.svg 32 48"
+    ]
+  },
+  "requirements": "Chromium[65] Codec[MP3] Feature[MSE]"
 }
