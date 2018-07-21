@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.6 - July 21th, 2018
+---------------------
+
   * Ported to Chromium-based backend for audio playback without Flash plugin.
 
 1.5 - December 16th, 2017
