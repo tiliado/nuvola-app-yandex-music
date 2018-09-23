@@ -81,6 +81,11 @@
     this.update()
   }
 
+  WebApp._getShuffle = function () {
+    var elm = this.getButtons().shuffle
+    return elm ? elm.classList.contains('player-controls__btn_on') : null
+  }
+
 // Extract data from the web page
   WebApp.update = function () {
     var track = {
@@ -116,6 +121,9 @@
     player.setCanGoNext(!!buttons.next)
     player.setCanPlay(!!buttons.play)
     player.setCanPause(!!buttons.pause)
+    player.setCanShuffle(!!buttons.shuffle)
+
+    player.setShuffleState(this._getShuffle())
 
     var actionsEnabled = {}
     var actionsStates = {}
@@ -139,7 +147,8 @@
       play: playPause && playPause.classList.contains('player-controls__btn_pause') ? null : playPause,
       pause: playPause && playPause.classList.contains('player-controls__btn_pause') ? playPause : null,
       next: notDisabled('.player-controls__btn_next'),
-      like: notDisabled('.player-controls__btn.like_player')
+      like: notDisabled('.player-controls__btn.like_player'),
+      shuffle: document.querySelector('.player-controls__btn_shuffle')
     }
   }
 
@@ -178,6 +187,11 @@
       case ACTION_LIKE:
         if (buttons.like) {
           Nuvola.clickOnElement(buttons.like)
+        }
+        break
+      case PlayerAction.SHUFFLE:
+        if (buttons.shuffle) {
+          Nuvola.clickOnElement(buttons.shuffle)
         }
         break
     }
