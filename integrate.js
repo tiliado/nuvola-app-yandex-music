@@ -86,6 +86,45 @@
     return elm ? elm.classList.contains('player-controls__btn_on') : null
   }
 
+  WebApp._getRepeat = function () {
+    var elm = this.getButtons().repeat
+    if (!elm) {
+      return null
+    }
+
+    if (elm.classList.contains('player-controls__btn_repeat_state1')) {
+      return Nuvola.PlayerRepeat.PLAYLIST
+    } else if (elm.classList.contains('player-controls__btn_repeat_state2')) {
+      return Nuvola.PlayerRepeat.TRACK
+    } else {
+     return Nuvola.PlayerRepeat.NONE 
+    }
+  }
+
+  WebApp._setRepeat = function (repeat) {
+    /*
+     * There are mismatch between Nuvola's states order and Yandex.Music states order
+     * and this map defines how much repeat button should be clicked, to change repeat state from current
+     * to requested
+     */
+    var clicksMap = {
+      "00": 0,
+      "01": 2,
+      "02": 1,
+      "10": 1,
+      "11": 0,
+      "12": 2,
+      "20": 2,
+      "21": 1,
+      "22": 0
+    };
+    var clicks = clicksMap[this._getRepeat() + "" + repeat]
+    var repeat = this.getButtons().repeat
+    for (var i = 0; i < clicks; i++) {
+      Nuvola.clickOnElement(repeat)
+    }
+ }
+
 // Extract data from the web page
   WebApp.update = function () {
     var track = {
@@ -122,8 +161,10 @@
     player.setCanPlay(!!buttons.play)
     player.setCanPause(!!buttons.pause)
     player.setCanShuffle(!!buttons.shuffle)
+    player.setCanRepeat(!!buttons.repeat)
 
     player.setShuffleState(this._getShuffle())
+    player.setRepeatState(this._getRepeat())
 
     var actionsEnabled = {}
     var actionsStates = {}
@@ -148,7 +189,8 @@
       pause: playPause && playPause.classList.contains('player-controls__btn_pause') ? playPause : null,
       next: notDisabled('.player-controls__btn_next'),
       like: notDisabled('.player-controls__btn.like_player'),
-      shuffle: document.querySelector('.player-controls__btn_shuffle')
+      shuffle: document.querySelector('.player-controls__btn_shuffle'),
+      repeat: document.querySelector('.player-controls__btn_repeat')
     }
   }
 
@@ -192,6 +234,11 @@
       case PlayerAction.SHUFFLE:
         if (buttons.shuffle) {
           Nuvola.clickOnElement(buttons.shuffle)
+        }
+        break
+      case PlayerAction.REPEAT:
+        if (buttons.repeat) {
+          this._setRepeat(param)
         }
         break
     }
