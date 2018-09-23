@@ -169,7 +169,7 @@
     var actionsEnabled = {}
     var actionsStates = {}
     actionsEnabled[ACTION_LIKE] = buttons.like != null && document.querySelector('.head__userpic') != null
-    actionsStates[ACTION_LIKE] = buttons.like != null && document.querySelector('.icon_like_on') != null
+    actionsStates[ACTION_LIKE] = buttons.like != null && document.querySelector('.d-like_on') != null
     Nuvola.actions.updateEnabledFlags(actionsEnabled)
     Nuvola.actions.updateStates(actionsStates)
 
@@ -188,7 +188,7 @@
       play: playPause && playPause.classList.contains('player-controls__btn_pause') ? null : playPause,
       pause: playPause && playPause.classList.contains('player-controls__btn_pause') ? playPause : null,
       next: notDisabled('.player-controls__btn_next'),
-      like: notDisabled('.player-controls__btn.like_player'),
+      like: document.querySelector('.player-controls__btn.d-like_theme-player'),
       shuffle: document.querySelector('.player-controls__btn_shuffle'),
       repeat: document.querySelector('.player-controls__btn_repeat')
     }
