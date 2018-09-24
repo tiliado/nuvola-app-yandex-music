@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.7 - September 24th, 2018
+--------------------------
+
+  * Added support for shuffle
+  * Added support for repeat
+  * Fixed like button
+
 1.6 - July 21th, 2018
 ---------------------
 
