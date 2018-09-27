@@ -97,7 +97,7 @@
     } else if (elm.classList.contains('player-controls__btn_repeat_state2')) {
       return Nuvola.PlayerRepeat.TRACK
     } else {
-     return Nuvola.PlayerRepeat.NONE 
+      return Nuvola.PlayerRepeat.NONE
     }
   }
 
@@ -108,22 +108,22 @@
      * to requested
      */
     var clicksMap = {
-      "00": 0,
-      "01": 2,
-      "02": 1,
-      "10": 1,
-      "11": 0,
-      "12": 2,
-      "20": 2,
-      "21": 1,
-      "22": 0
-    };
-    var clicks = clicksMap[this._getRepeat() + "" + repeat]
-    var repeat = this.getButtons().repeat
-    for (var i = 0; i < clicks; i++) {
-      Nuvola.clickOnElement(repeat)
+      '00': 0,
+      '01': 2,
+      '02': 1,
+      '10': 1,
+      '11': 0,
+      '12': 2,
+      '20': 2,
+      '21': 1,
+      '22': 0
     }
- }
+    var clicks = clicksMap[this._getRepeat() + '' + repeat]
+    var repeatButton = this.getButtons().repeat
+    for (var i = 0; i < clicks; i++) {
+      Nuvola.clickOnElement(repeatButton)
+    }
+  }
 
 // Extract data from the web page
   WebApp.update = function () {
