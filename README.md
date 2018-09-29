@@ -1,4 +1,4 @@
-Yandex Music • Nuvola Apps Runtime
+Yandex Music • Nuvola Apps Runtime [![CircleCI](https://circleci.com/gh/tiliado/nuvola-app-yandex-music/tree/master.svg?style=svg)](https://circleci.com/gh/tiliado/nuvola-app-yandex-music/tree/master)
 =================================
 
 Integration of Yandex Music into your linux desktop via
