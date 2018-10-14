@@ -1,9 +1,10 @@
-Changelog
-=========
+Yandex Music Changelog
+======================
 
-  * Added support for shuffle
-  * Added support for repeat
-  * Fixed like button
+  * Nuvola 4.13 is required.
+  * Added support for shuffle.
+  * Added support for repeat.
+  * Fixed like button.
 
 1.6 - July 21th, 2018
 ---------------------
