@@ -1,6 +1,9 @@
 Yandex Music Changelog
 ======================
 
+1.7 - October 14th, 2018
+------------------------
+
   * Nuvola 4.13 is required.
   * Added support for shuffle.
   * Added support for repeat.
