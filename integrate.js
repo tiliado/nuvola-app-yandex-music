@@ -28,32 +28,32 @@
 (function (Nuvola) {
   if (Nuvola.global === window) {
     /* Fix for broken detection of window.webkitAudioContext */
-    var origHasOwnProperty = window.hasOwnProperty
+    const origHasOwnProperty = window.hasOwnProperty
     window.hasOwnProperty = function (key) {
       return origHasOwnProperty.call(window, key) && window[key] !== undefined
     }
   }
 
-// Create media player component
-  var player = Nuvola.$object(Nuvola.MediaPlayer)
+  // Create media player component
+  const player = Nuvola.$object(Nuvola.MediaPlayer)
 
-// Handy aliases
-  var PlaybackState = Nuvola.PlaybackState
-  var PlayerAction = Nuvola.PlayerAction
+  // Handy aliases
+  const PlaybackState = Nuvola.PlaybackState
+  const PlayerAction = Nuvola.PlayerAction
 
-// Create new WebApp prototype
-  var WebApp = Nuvola.$WebApp()
+  // Create new WebApp prototype
+  const WebApp = Nuvola.$WebApp()
 
-// Translations
-  var C_ = Nuvola.Translate.pgettext
+  // Translations
+  const C_ = Nuvola.Translate.pgettext
 
-  var ACTION_LIKE = 'like'
+  const ACTION_LIKE = 'like'
 
-// Initialization routines
+  // Initialization routines
   WebApp._onInitWebWorker = function (emitter) {
     Nuvola.WebApp._onInitWebWorker.call(this, emitter)
 
-    var state = document.readyState
+    const state = document.readyState
     if (state === 'interactive' || state === 'complete') {
       this._onPageReady()
     } else {
@@ -61,17 +61,17 @@
     }
 
     Nuvola.actions.addAction('like', 'win', ACTION_LIKE, C_('Action', 'Like'),
-        null, null, null, true)
+      null, null, null, true)
   }
 
-// Page is ready for magic
+  // Page is ready for magic
   WebApp._onPageReady = function () {
     // Connect handler for signal ActionActivated
     Nuvola.actions.connect('ActionActivated', this)
     try {
       // Remove advertising sidebar
       document.querySelector('.centerblock-wrapper').setAttribute('style', 'width: 100%')
-      var sidebar = document.querySelector('.sidebar__placeholder .sidebar')
+      const sidebar = document.querySelector('.sidebar__placeholder .sidebar')
       sidebar.parentNode.removeChild(sidebar)
     } catch (e) { /* ignored */ }
 
@@ -82,12 +82,12 @@
   }
 
   WebApp._getShuffle = function () {
-    var elm = this.getButtons().shuffle
+    const elm = this.getButtons().shuffle
     return elm ? elm.classList.contains('player-controls__btn_on') : null
   }
 
   WebApp._getRepeat = function () {
-    var elm = this.getButtons().repeat
+    const elm = this.getButtons().repeat
     if (!elm) {
       return null
     }
@@ -107,7 +107,8 @@
      * and this map defines how much repeat button should be clicked, to change repeat state from current
      * to requested
      */
-    var clicksMap = {
+    /*eslint-disable */
+    const clicksMap = {
       '00': 0,
       '01': 2,
       '02': 1,
@@ -118,16 +119,17 @@
       '21': 1,
       '22': 0
     }
-    var clicks = clicksMap[this._getRepeat() + '' + repeat]
-    var repeatButton = this.getButtons().repeat
-    for (var i = 0; i < clicks; i++) {
+    /*eslint-disable */
+    const clicks = clicksMap[this._getRepeat() + '' + repeat]
+    const repeatButton = this.getButtons().repeat
+    for (let i = 0; i < clicks; i++) {
       Nuvola.clickOnElement(repeatButton)
     }
   }
 
-// Extract data from the web page
+  // Extract data from the web page
   WebApp.update = function () {
-    var track = {
+    const track = {
       title: null,
       artist: null,
       album: null,
@@ -138,15 +140,15 @@
       track.title = document.querySelector('.player-controls .track .track__title').innerText
       track.artist = document.querySelector('.player-controls .track .track__artists').innerText
       track.artLocation = document.querySelector('.player-controls .track .track-cover').src.replace(
-            /\d+x\d+$/, '200x200')
+        /\d+x\d+$/, '200x200')
     } catch (e) {
-        // ~ console.log(e);
+      // ~ console.log(e);
     }
 
     player.setTrack(track)
 
-    var buttons = this.getButtons()
-    var state = null
+    const buttons = this.getButtons()
+    let state = null
     if (buttons.pause) {
       state = PlaybackState.PLAYING
     } else if (buttons.play) {
@@ -166,8 +168,8 @@
     player.setShuffleState(this._getShuffle())
     player.setRepeatState(this._getRepeat())
 
-    var actionsEnabled = {}
-    var actionsStates = {}
+    const actionsEnabled = {}
+    const actionsStates = {}
     actionsEnabled[ACTION_LIKE] = buttons.like != null && document.querySelector('.head__userpic') != null
     actionsStates[ACTION_LIKE] = buttons.like != null && document.querySelector('.d-like_on') != null
     Nuvola.actions.updateEnabledFlags(actionsEnabled)
@@ -178,11 +180,11 @@
   }
 
   WebApp.getButtons = function () {
-    var notDisabled = function (selector) {
-      var elm = document.querySelector(selector)
+    const notDisabled = function (selector) {
+      const elm = document.querySelector(selector)
       return (elm && !elm.classList.contains('player-controls__btn_disabled')) ? elm : null
     }
-    var playPause = notDisabled('.player-controls__btn_play')
+    const playPause = notDisabled('.player-controls__btn_play')
     return {
       prev: notDisabled('.player-controls__btn_prev'),
       play: playPause && playPause.classList.contains('player-controls__btn_pause') ? null : playPause,
@@ -194,9 +196,9 @@
     }
   }
 
-// Handler of playback actions
+  // Handler of playback actions
   WebApp._onActionActivated = function (emitter, name, param) {
-    var buttons = this.getButtons()
+    const buttons = this.getButtons()
     switch (name) {
       case PlayerAction.TOGGLE_PLAY:
         if (buttons.play) {
@@ -245,4 +247,4 @@
   }
 
   WebApp.start()
-})(this)  // function(Nuvola)
+})(this) // function(Nuvola)
