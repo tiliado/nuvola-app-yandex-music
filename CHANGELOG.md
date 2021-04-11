@@ -1,6 +1,11 @@
 Yandex Music Changelog
 ======================
 
+1.8 - April 11th, 2021
+----------------------
+
+ * Reformat code
+
 1.7 - October 14th, 2018
 ------------------------
 
