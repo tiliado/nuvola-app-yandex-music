@@ -1,6 +1,12 @@
 Yandex Music Changelog
 ======================
 
+1.9 - December 30th, 2021
+-------------------------
+
+ * Update track.artLocation selector.
+ * Update like button selectors.
+
 1.8 - April 11th, 2021
 ----------------------
 
